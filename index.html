@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header>
+        <div class="header-container">
+            <img src="uphsd-logo.png" alt="UPHSD Logo" class="logo">
+            <div class="header-text">
+                <h1>Thesis Dashboard</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#" onclick="showSection('camera-section')">Camera</a></li>
+                        <li><a href="#" onclick="showSection('history-section')">History</a></li>
+                        <li><a href="#" onclick="showSection('about-section')">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Camera -->
+        <section id="camera-section" class="dashboard-section">
+            <h2>Camera View</h2>
+            <div class="card camera-card">
+                <img src="http://100.118.189.81:8081/?action=stream"
+                     id="camera-stream"
+                     class="stream-view"
+                     alt="Live Camera Stream">
+            </div>
+        </section>
+
+        <!-- History -->
+        <section id="history-section" class="dashboard-section" style="display: none;">
+            <h2>Activity History</h2>
+
+            <div class="filter-row">
+                <div class="filter-buttons">
+                    <button id="btn7">Last 7 Days</button>
+                    <button id="btn30">Last 30 Days</button>
+                    <button id="btnAll">All Data</button>
+                </div>
+
+                <div class="month-filter">
+                    <label for="monthSelect">Filter by Month:</label>
+                    <select id="monthSelect">
+                        <option value="all" selected>All Months</option>
+                        <option value="0">January</option>
+                        <option value="1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card chart-container">
+                <canvas id="historyChart"></canvas>
+            </div>
+
+            <div class="card log-container">
+                <h3>Event Log</h3>
+                <ul id="event-log"></ul>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about-section" class="dashboard-section" style="display: none;">
+            <h2>About</h2>
+
+            <div class="about-card">
+                <h3>Project Overview</h3>
+                <p>
+                    This system is a smart monitoring dashboard designed for Arowana tanks.
+                    It uses YOLOv9 + ANN to detect abnormal fish behavior such as illness or hunger.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>Objectives</h3>
+                <ul>
+                    <li>Monitor Arowana fish behavior using AI.</li>
+                    <li>Detect hunger.</li>
+                    <li>Log AI-triggered actions in the activity history.</li>
+                </ul>
+            </div>
+
+            <div class="about-card">
+                <h3>Researchers</h3>
+                <ul>
+                    <li>Jan Patrick Verde</li>
+                    <li>Jimson David Dumagpi</li>
+                    <li>Eugene Ray Cabarang</li>
+                </ul>
+            </div>
+
+            <div class="about-card">
+                <h3>Research Adviser</h3>
+                <ul>
+                    <li>Engr. Alvin Destajo</li>
+                </ul>
+            </div>
+
+            <div class="about-card funfacts-card">
+                <h3>Fun Facts</h3>
+                <p>Arowanas can jump more than 5 feet above water.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Thesis Dashboard. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
