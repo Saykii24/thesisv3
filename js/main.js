@@ -3,7 +3,7 @@
 // ======================================
 async function loadLogs() {
     try {
-        const res = await fetch("http://raspberrypi.tail505f60.ts.net:8000/logs");
+        const res = await fetch("https://raspberrypi.tail505f60.ts.net:8000/logs");
         const logs = await res.json();
 
         const logList = document.getElementById("event-log");
@@ -51,7 +51,7 @@ async function createHistoryChart() {
     const ctx = document.getElementById("historyChart").getContext("2d");
 
     // 1️⃣ Fetch logs from Raspberry Pi
-    const res = await fetch("http://raspberrypi.tail505f60.ts.net:8000/logs");
+    const res = await fetch("https://raspberrypi.tail505f60.ts.net:8000/logs");
     const logs = await res.json();
 
     // 2️⃣ Convert logs into daily counts
@@ -162,5 +162,6 @@ async function createHistoryChart() {
         chart.update();
     });
 }
+
 
 
